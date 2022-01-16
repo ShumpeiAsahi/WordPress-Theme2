@@ -2,8 +2,8 @@
 	<div class="col-md-4">
 		<?php dynamic_sidebar( 'sidebar_widget01' ); ?>
 	<!--月別アーカイブ-->
-	<div class="container bg-1 mb-5 px-3 pb-1  titletext">
-	    <h4 class="text-center py-2 mb-3 font-weight-bolder bg-1">- 月別アーカイブ -</h4>
+	<div class="container bg-white mb-5 px-0 pb-1">
+	    <h4 class="text-center py-2 mb-3 font-weight-bolder text-white bg-cyan">月別アーカイブ</h4>
 		<?php
 		$year_prev = null;
 		$postType = get_post_type( );
@@ -25,7 +25,7 @@
 		        <ul>
 		    <?php } ?>
 		            <li>
-		                <a class="text-secondary" href="<?php echo esc_url(home_url()); ?>/<?php echo $month->year; ?>/<?php echo date("m", mktime(0, 0, 0, $month->month, 1, $month->year)) ?>">
+		                <a class="text-secondary" href="<?php echo esc_url(home_url()); ?>/date/<?php echo $month->year; ?>/<?php echo date("m", mktime(0, 0, 0, $month->month, 1, $month->year)) ?>">
 		                    <?php echo date("n", mktime(0, 0, 0, $month->month, 1, $month->year)) ?>月(<?php echo $month->post_count; ?>)
 		                </a>
 		            </li>

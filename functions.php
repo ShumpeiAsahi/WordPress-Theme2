@@ -10,18 +10,16 @@ register_nav_menus(
  )
 ); 
 
-
-
 /*ウィジェット機能*/
 function my_widgets_init() {
 
 	register_sidebar( array(
 		'name' => 'サイドバー',
 		'id' => 'sidebar_widget01',
-		'before_widget' => '<div class="container bg-1 px-0 pb-3 mb-5">',
+		'before_widget' => '<div class="container bg-white px-0 pb-3 mb-5">',
 		'after_widget' => '</div>',
-		'before_title' => '<h4 class="text-center py-2 mb-3 mt-0 font-weight-bolder titletext bg-1">- ',
-		'after_title' => ' -</h4>',
+		'before_title' => '<h4 class="text-center py-2 mb-3 mt-0 font-weight-bolder text-white bg-cyan">',
+		'after_title' => '</h4>',
 	) );
 	register_sidebar( array(
 		'name' => 'フッター About',
@@ -182,23 +180,5 @@ function insert_table_of_contents( $the_content ){
     return $the_content;
 }
 add_filter('the_content','insert_table_of_contents');
-
-//空白行の自動生成
-function insert_blank( $the_content ){
-    if(is_single() or is_page()) {   //投稿ページもしくは固定ページの場合
-        $pattern = '/(^<p><\/p>$)/im';
-        $the_content = preg_replace($pattern,'<pre> </pre>', $the_content); //pタグをpreタグに変換
-    }
-    return $the_content;
-}
-add_filter('the_content','insert_blank');
-
-//WordPressのJqueryを読み込まない
-function delete_jquery() {
-    if (!is_admin()) {
-      wp_deregister_script('jquery');
-    }
-  }
-  add_action('init', 'delete_jquery');
 ?>
 

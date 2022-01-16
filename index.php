@@ -1,9 +1,10 @@
 <?php get_header(); ?>
 
-<main class="bg-1">
+<main class="bg-white">
 	<div class="container px-0">
 	<!--ピックアップ記事-->
 	<div class="row py-3">
+		
 		<div class="col-md-8 md-3">
 		<?php if (!is_paged()) : ?>
 		<?php $top_query = new WP_Query( 'tag=toppickup' ); ?>
@@ -22,7 +23,7 @@
 					</a>
 				</div>
 				<!--記事タイトル-->
-				<h2 class="h4 px-3 bg-1 pb-3 m-0 border-0"><a class="text-dark text-decoration-none" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+				<h2 class="h4 px-3 bg-white pb-3 m-0"><a class="text-dark" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 		</div>
 		<?php endwhile; ?>
 	
@@ -33,8 +34,8 @@
 	<!--メインコンテンツ-->
 	<div class="row py-1 o-3column">
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-		<div class="py-2 col-sm-6">
-		<div class="bg-1 pb-1">
+		<div class="py-2 col-6">
+		<div class="bg-white pb-1 border">
 		<!--サムネイル-->
 			<div class="pb-2"><a href="<?php the_permalink(); ?>">
 						<?php if ( has_post_thumbnail() ) : ?>
@@ -45,10 +46,10 @@
 					</a>
 					</div>
 		<!--記事タイトル-->
-		<h2 class="h6 bg-1 pb-2 titletext border-0"><a class="text-dark text-decoration-none" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+		<h2 class="h6 bg-white pb-2 px-3per m-0 font-weight-bolder"><a class="text-dark" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 		<div class="pb-3 px-2">
 		<!--日付-->
-		<span class="text-secondary"><?php the_time('Y.n.j'); ?></span>
+		<span class="text-secondary"><?php the_time('Y/n/j'); ?></span>
 		<!--カテゴリー-->
 		<?php
 		$category = get_the_category();
@@ -58,7 +59,7 @@
 		<?php
 		foreach($category as $cat){
 				
-		echo '<li class="d-inline px-1"><a class="cate text-white bg-2 text-decoration-none" href="' . get_category_link( $cat->cat_ID ) . '">' . $cat->cat_name . '</a></li>';
+		echo '<li class="d-inline px-1"><a class="cate text-white bg-cyan text-decoration-none" href="' . get_category_link( $cat->cat_ID ) . '">' . $cat->cat_name . '</a></li>';
 		 
 		} ?>
 		    

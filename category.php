@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 
-<main class="bg-1">
+<main class="bg-cream">
 	<div class="container px-0">
 	<div class="row py-3">
 		<div class="col-md-8">
-	<h1 class="pagetitle mb-5 mt-2"><?php single_cat_title()?>に関する記事</h1>
+	
 	<!--メインコンテンツ-->
 	<div class="row py-1 o-3column">
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -21,7 +21,7 @@
 					</a>
 					</div>
 		<!--記事タイトル-->
-		<h2 class="h6 bg-1 pb-2 titletext border-0"><a class="text-dark text-decoration-none" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+		<h2 class="h6 bg-white pb-2 px-3per m-0 font-weight-bolder"><a class="text-dark" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 		<div class="pb-3 px-2">
 		<!--日付-->
 		<span class="text-secondary"><?php the_time('Y/n/j'); ?></span>

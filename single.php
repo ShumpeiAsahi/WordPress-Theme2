@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<main class="bg-1">
+<main class="bg-cream">
 	<div class="container px-0">
 			<div class="row py-5 px-0">
 			<div class="col-md-8 col-12 pb-5 mx-auto">
@@ -8,7 +8,7 @@
 				<div class="bg-white py-3">
 		<!--記事タイトル-->
 				<div class="px-5per py-1">
-					<h1 class="font-weight-bolder py-4 pagetitle"><?php the_title(); ?></h1>
+					<h1 class="h4 font-weight-bolder py-4"><?php the_title(); ?></h1>
 				</div>
 		<!--日付-->
 		<div class="px-5per pb-3">
@@ -22,7 +22,7 @@
 		<?php
 		foreach($category as $cat){
 				
-		echo '<li class="d-inline px-1"><a class="p-1 text-white bg-2 text-decoration-none" href="' . get_category_link( $cat->cat_ID ) . '">' . $cat->cat_name . '</a></li>';
+		echo '<li class="d-inline px-1"><a class="p-1 text-white bg-cyan" href="' . get_category_link( $cat->cat_ID ) . '">' . $cat->cat_name . '</a></li>';
 		 
 		} ?>
 		    
