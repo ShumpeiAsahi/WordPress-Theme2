@@ -10,8 +10,6 @@
 				<div class="px-5per py-1">
 					<h1 class="h4 font-weight-bolder py-4"><?php the_title(); ?></h1>
 				</div>
-		<!--日付-->
-				<p class="px-3 text-secondary"><?php the_time('Y/n/j'); ?></p>
 		<!--サムネイル-->
 				<div class="pb-5">
 						<?php if ( has_post_thumbnail() ) : ?>
